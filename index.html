@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>日照金山 · NLP 培訓師冥想引導 21 天自我訓練</title>
+<meta name="description" content="NLP 培訓師冥想引導核心自我訓練 21 天生成器，幫助培訓師提升帶領學員冥想的能力。" />
+<meta name="theme-color" content="#1466aa" />
+<link rel="manifest" href="manifest.json" />
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+<link rel="icon" href="icons/icon-192.png" />
+<style>
+  :root{
+    /* 日照金山 palette — 取自日出時金色山峰與深藍天空 */
+    --sky-deep:#0f3d63;
+    --sky:#1466aa;
+    --sky-mid:#2e90d9;
+    --sky-light:#7cc0ec;
+    --gold-deep:#b6802a;
+    --gold:#e0aa47;
+    --gold-light:#f3d68b;
+    --snow:#fbf6ea;
+    --rock:#5a6675;
+    --rock-dark:#3a4453;
+    --ink:#23303e;
+    --ink-soft:#4b5a6b;
+    --paper:#fbfaf6;
+    --card:#ffffff;
+    --line:#e7e1d3;
+    --good:#2f9e6f;
+    --shadow:0 10px 30px rgba(15,61,99,.10);
+    --shadow-lg:0 18px 50px rgba(15,61,99,.18);
+    --r:18px;
+    --maxw:880px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"PingFang TC","Microsoft JhengHei","Noto Sans TC",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:88px;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
+
+  /* ---------- HEADER / 日照金山 HERO ---------- */
+  header.hero{
+    position:relative;overflow:hidden;color:#fff;text-align:center;
+    padding:0 18px 38px;
+    background:
+      radial-gradient(120% 80% at 50% 14%, rgba(255,244,205,.55) 0%, rgba(255,244,205,0) 42%),
+      linear-gradient(180deg,#0c3258 0%,var(--sky) 46%,#3f9adb 78%,#7cc0ec 100%);
+  }
+  .hero .sun{
+    position:absolute;left:50%;top:46px;width:120px;height:120px;transform:translateX(-50%);
+    background:radial-gradient(circle, rgba(255,248,224,.95) 0%, rgba(255,236,178,.55) 38%, rgba(255,236,178,0) 70%);
+    border-radius:50%;filter:blur(2px);pointer-events:none;
+    animation:glow 6s ease-in-out infinite;
+  }
+  @keyframes glow{0%,100%{opacity:.85;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.08)}}
+  /* CSS golden mountains */
+  .range{position:absolute;left:0;right:0;bottom:0;height:230px;pointer-events:none}
+  .hero-content{position:relative;z-index:3;padding-top:104px}
+  .badge{
+    display:inline-block;font-size:12.5px;letter-spacing:.32em;font-weight:600;
+    background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);
+    padding:6px 16px;border-radius:999px;backdrop-filter:blur(6px);margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(26px,6vw,40px);font-weight:800;letter-spacing:.04em;line-height:1.25;
+    text-shadow:0 2px 18px rgba(8,40,70,.45);
+  }
+  .hero h1 .gold{
+    background:linear-gradient(180deg,#fff5da,#f3c46a);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero p.sub{margin-top:14px;font-size:15px;color:rgba(255,255,255,.92);max-width:540px;margin-left:auto;margin-right:auto;text-shadow:0 1px 8px rgba(8,40,70,.35)}
+  .hero .meta{margin-top:22px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .hero .meta span{font-size:12.5px;background:rgba(10,40,70,.28);border:1px solid rgba(255,255,255,.22);padding:6px 13px;border-radius:999px}
+
+  /* ---------- TABS ---------- */
+  nav.tabs{
+    position:sticky;top:0;z-index:40;background:rgba(251,250,246,.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .tabs-inner{max-width:var(--maxw);margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none}
+  .tabs-inner::-webkit-scrollbar{display:none}
+  .tab{
+    flex:1 0 auto;border:none;background:none;cursor:pointer;font-family:inherit;
+    padding:14px 16px;font-size:14.5px;font-weight:600;color:var(--ink-soft);white-space:nowrap;
+    border-bottom:3px solid transparent;transition:.2s;
+  }
+  .tab.active{color:var(--sky);border-bottom-color:var(--gold)}
+  .tab:hover{color:var(--sky)}
+
+  section.view{display:none;padding-top:26px;animation:fade .35s ease}
+  section.view.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  h2.title{font-size:21px;font-weight:800;color:var(--ink);margin-bottom:4px;display:flex;align-items:center;gap:9px}
+  h2.title .dot{width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(224,170,71,.2)}
+  p.lead{color:var(--ink-soft);font-size:14.5px;margin-bottom:20px}
+
+  /* ---------- PROGRESS PANEL ---------- */
+  .progress-card{
+    background:linear-gradient(135deg,#103a5f,#1d72b8);color:#fff;border-radius:var(--r);
+    padding:20px 22px;display:flex;align-items:center;gap:20px;box-shadow:var(--shadow);margin-bottom:24px;position:relative;overflow:hidden;
+  }
+  .progress-card::after{content:"";position:absolute;right:-30px;top:-30px;width:160px;height:160px;background:radial-gradient(circle,rgba(243,214,139,.4),transparent 65%);}
+  .ring{position:relative;width:88px;height:88px;flex:0 0 auto}
+  .ring svg{transform:rotate(-90deg)}
+  .ring .num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .ring .num b{font-size:22px;line-height:1}
+  .ring .num small{font-size:11px;opacity:.85}
+  .progress-meta{flex:1;z-index:2}
+  .progress-meta h3{font-size:16px;margin-bottom:4px}
+  .progress-meta .stats{display:flex;gap:18px;margin-top:10px;flex-wrap:wrap}
+  .progress-meta .stats div b{font-size:19px;display:block}
+  .progress-meta .stats div span{font-size:11.5px;opacity:.85}
+  .btn-reset{margin-top:12px;font-size:12px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);color:#fff;padding:5px 12px;border-radius:8px;cursor:pointer}
+
+  /* ---------- WEEK + DAY CARDS ---------- */
+  .week-head{display:flex;align-items:center;gap:12px;margin:26px 0 14px}
+  .week-head .wnum{font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--gold-deep)}
+  .week-head h3{font-size:17px;font-weight:800}
+  .week-head .line{flex:1;height:1px;background:var(--line)}
+
+  .day{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;
+    box-shadow:var(--shadow);overflow:hidden;transition:.2s;
+  }
+  .day.done{border-color:rgba(47,158,111,.4);background:linear-gradient(0deg,rgba(47,158,111,.05),#fff)}
+  .day-head{display:flex;align-items:center;gap:14px;padding:15px 16px;cursor:pointer}
+  .daynum{
+    flex:0 0 auto;width:44px;height:44px;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    background:linear-gradient(150deg,var(--gold-light),var(--gold));color:#5a3e0c;font-weight:800;line-height:1;
+  }
+  .daynum small{font-size:9px;font-weight:600;opacity:.8}
+  .daynum b{font-size:18px}
+  .day-head .dinfo{flex:1;min-width:0}
+  .day-head .dinfo .theme{font-weight:700;font-size:15.5px}
+  .day-head .dinfo .obj{font-size:12.5px;color:var(--ink-soft);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .check{
+    flex:0 0 auto;width:28px;height:28px;border-radius:50%;border:2px solid var(--line);background:#fff;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;transition:.2s;font-size:15px;color:transparent;
+  }
+  .day.done .check{background:var(--good);border-color:var(--good);color:#fff}
+  .chev{flex:0 0 auto;color:var(--rock);transition:.3s}
+  .day.open .chev,.fav-card.open .chev{transform:rotate(180deg)}
+  .chev{transition:.3s}
+  .day-body{display:none;padding:0 16px 18px;border-top:1px solid var(--line)}
+  .day.open .day-body{display:block;animation:fade .3s ease}
+  .day-body .tag{display:inline-block;font-size:11px;font-weight:600;color:var(--sky);background:rgba(46,144,217,.1);padding:3px 10px;border-radius:999px;margin:14px 0 12px}
+  .block{margin-bottom:14px}
+  .block h4{font-size:13px;font-weight:800;color:var(--gold-deep);letter-spacing:.04em;margin-bottom:6px;display:flex;align-items:center;gap:7px}
+  .block h4::before{content:"";width:14px;height:2px;background:var(--gold);border-radius:2px}
+  .block ul{list-style:none;padding-left:0}
+  .block li{position:relative;padding-left:18px;font-size:14px;margin-bottom:5px;color:var(--ink)}
+  .block li::before{content:"";position:absolute;left:2px;top:11px;width:5px;height:5px;border-radius:50%;background:var(--sky-mid)}
+  .block.check-block li::before{content:"◇";color:var(--gold-deep);background:none;left:0;top:0;font-size:13px}
+  .script-quote{
+    background:linear-gradient(135deg,#fbf7ec,#fdfaf2);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;
+    padding:12px 16px;font-size:14px;color:var(--ink-soft);line-height:1.85;
+  }
+  .script-quote .pause{color:var(--sky);font-weight:600;font-size:12px}
+  .duration{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--rock);margin-top:4px}
+  .day-acts{display:flex;gap:8px;margin-top:10px}
+  .mini-btn{font-family:inherit;font-size:12.5px;font-weight:600;padding:7px 14px;border-radius:9px;cursor:pointer;border:1.5px solid var(--line);background:#fff;color:var(--ink);transition:.18s}
+  .mini-btn.read{border-color:var(--sky-mid);color:var(--sky)}
+  .mini-btn:hover{background:var(--paper)}
+
+  /* favorites */
+  .fav-empty{text-align:center;color:var(--rock);font-size:14px;padding:36px 16px;background:var(--card);border:1px dashed var(--line);border-radius:var(--r)}
+  .fav-empty .big{font-size:34px;display:block;margin-bottom:10px}
+  .fav-card{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;box-shadow:var(--shadow);overflow:hidden}
+  .fav-head{display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer}
+  .fav-head .ic{flex:0 0 auto;width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:18px;background:linear-gradient(150deg,var(--gold-light),var(--gold))}
+  .fav-head .fi{flex:1;min-width:0}
+  .fav-head .fi b{display:block;font-size:14.5px}
+  .fav-head .fi span{font-size:12px;color:var(--rock)}
+  .fav-body{display:none;padding:0 12px 12px}
+  .fav-card.open .fav-body{display:block;animation:fade .3s ease}
+  .fav-acts{display:flex;gap:8px;padding:12px 4px 4px;flex-wrap:wrap}
+  .fav-acts button{font-family:inherit;font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:9px;cursor:pointer;border:1px solid var(--line);background:#fff;color:var(--ink)}
+  .fav-acts .del{color:#c0392b;border-color:#edcfca}
+
+  /* ---------- TOOLS / BREATHING ---------- */
+  .tool-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow);margin-bottom:22px}
+  .breath-stage{
+    width:240px;height:240px;margin:8px auto 4px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(circle at 50% 35%, var(--sky-light), var(--sky) 70%, var(--sky-deep));
+    color:#fff;text-align:center;box-shadow:0 12px 40px rgba(20,102,170,.4);
+    transition:transform 4s ease-in-out, box-shadow .6s;
+  }
+  .breath-stage.inhale{transform:scale(1.18)}
+  .breath-stage.hold{transform:scale(1.18)}
+  .breath-stage.exhale{transform:scale(.78)}
+  .breath-stage .bphase{font-size:22px;font-weight:800;letter-spacing:.05em}
+  .breath-stage .bcount{font-size:48px;font-weight:300;margin-top:2px}
+  .breath-controls{display:flex;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+  .field{display:flex;flex-direction:column;gap:6px;font-size:12.5px;color:var(--ink-soft)}
+  .field-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+  .field input,.field select{font-family:inherit;font-size:14px;padding:8px 10px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--ink);width:88px;text-align:center}
+
+  .btn{
+    font-family:inherit;font-weight:700;font-size:14.5px;cursor:pointer;border:none;border-radius:11px;padding:11px 22px;transition:.2s;
+  }
+  .btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff;box-shadow:0 6px 18px rgba(182,128,42,.35)}
+  .btn-primary:hover{filter:brightness(1.05);transform:translateY(-1px)}
+  .btn-ghost{background:#fff;border:1.5px solid var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--sky-mid);color:var(--sky)}
+  .btn-blue{background:linear-gradient(135deg,var(--sky-mid),var(--sky));color:#fff;box-shadow:0 6px 18px rgba(20,102,170,.3)}
+
+  .hint{font-size:12.5px;color:var(--rock);text-align:center;margin-top:14px;line-height:1.7}
+
+  /* timer */
+  .timer-display{font-size:54px;font-weight:200;text-align:center;color:var(--sky);letter-spacing:.04em;font-variant-numeric:tabular-nums}
+
+  /* ---------- GENERATOR ---------- */
+  .gen-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:18px}
+  .gen-field label{display:block;font-size:12.5px;font-weight:700;color:var(--ink-soft);margin-bottom:7px}
+  .gen-field select{width:100%;font-family:inherit;font-size:14px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+  .chips{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{font-size:13px;padding:7px 14px;border-radius:999px;border:1.5px solid var(--line);background:#fff;cursor:pointer;transition:.18s;color:var(--ink-soft)}
+  .chip.on{background:linear-gradient(135deg,var(--gold-light),var(--gold));border-color:var(--gold);color:#5a3e0c;font-weight:700}
+  .gen-out{
+    margin-top:22px;background:linear-gradient(180deg,#fdfbf4,#fbf7ec);border:1px solid var(--line);border-radius:var(--r);
+    padding:6px 6px 6px;box-shadow:var(--shadow);display:none;
+  }
+  .gen-out.show{display:block;animation:fade .4s ease}
+  .gen-out-head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px 10px;gap:10px;flex-wrap:wrap}
+  .gen-out-head h3{font-size:16px}
+  .gen-out-head .acts{display:flex;gap:8px}
+  .gen-out-head .acts button{font-size:12.5px;padding:7px 13px;border-radius:9px;cursor:pointer;border:1px solid var(--line);background:#fff;color:var(--ink);font-family:inherit;font-weight:600}
+  .gen-out-head .acts button:hover{border-color:var(--sky-mid);color:var(--sky)}
+  .gen-stage{background:#fff;border-radius:12px;margin:8px;padding:14px 16px;border:1px solid var(--line)}
+  .gen-stage h4{font-size:14px;color:var(--sky);margin-bottom:3px}
+  .gen-stage .purpose{font-size:11.5px;color:var(--rock);margin-bottom:9px}
+  .gen-stage p{font-size:14.5px;color:var(--ink);line-height:1.95;white-space:pre-wrap}
+  .gen-stage .pause{color:var(--sky-mid);font-weight:600;font-size:12px}
+
+  /* ---------- ABOUT ---------- */
+  .about-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:var(--shadow);margin-bottom:16px}
+  .about-card h3{font-size:16px;margin-bottom:10px;color:var(--sky);display:flex;align-items:center;gap:8px}
+  .about-card p{font-size:14px;color:var(--ink-soft);margin-bottom:8px}
+  .pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:6px}
+  .pillar{background:linear-gradient(160deg,#fbf7ec,#fff);border:1px solid var(--line);border-radius:12px;padding:14px}
+  .pillar .ic{font-size:22px}
+  .pillar b{display:block;font-size:14px;margin:6px 0 3px}
+  .pillar span{font-size:12px;color:var(--ink-soft)}
+
+  /* install banner */
+  #installBar{position:fixed;left:50%;transform:translateX(-50%);bottom:96px;z-index:60;display:none;
+    background:var(--ink);color:#fff;border-radius:14px;padding:12px 16px;gap:14px;align-items:center;box-shadow:var(--shadow-lg);max-width:92%}
+  #installBar.show{display:flex}
+  #installBar button{font-family:inherit;font-weight:700;font-size:13px;border:none;border-radius:9px;padding:8px 14px;cursor:pointer}
+  #installBar .yes{background:var(--gold);color:#3a2906}
+  #installBar .no{background:transparent;color:rgba(255,255,255,.7)}
+
+  footer{text-align:center;color:var(--rock);font-size:12px;padding:30px 18px 10px}
+
+  /* bottom mobile nav */
+  .toast{position:fixed;left:50%;bottom:110px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:10px 18px;border-radius:999px;font-size:13px;opacity:0;transition:.3s;z-index:80;pointer-events:none}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="sun"></div>
+  <svg class="range" viewBox="0 0 880 230" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="gMain" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#f7df9d"/><stop offset=".5" stop-color="#e3ab48"/><stop offset="1" stop-color="#b6802a"/>
+      </linearGradient>
+      <linearGradient id="gSide" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#8b96a4"/><stop offset="1" stop-color="#4a5563"/>
+      </linearGradient>
+    </defs>
+    <path d="M0,230 L120,150 L210,90 L250,130 L300,230 Z" fill="url(#gSide)"/>
+    <path d="M880,230 L760,150 L660,95 L610,140 L560,230 Z" fill="url(#gSide)"/>
+    <path d="M250,230 L380,80 L430,38 L468,70 L520,140 L640,230 Z" fill="url(#gMain)"/>
+    <path d="M430,38 L468,70 L450,86 L430,66 L412,86 L398,72 Z" fill="#fbf6ea"/>
+  </svg>
+  <div class="hero-content wrap">
+    <span class="badge">日 照 金 山 · 心 之 所 向</span>
+    <h1>NLP 培訓師<br><span class="gold">冥想引導 21 天</span>自我訓練</h1>
+    <p class="sub">如晨光點亮金頂——每天 15 分鐘，循序鍛鍊你的「教練狀態」、米爾頓語言與引導節奏，成為能帶領學員進入深層平靜的引導者。</p>
+    <div class="meta">
+      <span>🧘 三週遞進課程</span>
+      <span>🎙 米爾頓語調訓練</span>
+      <span>⚓ 心錨與次感官</span>
+      <span>✨ 引導詞生成器</span>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <button class="tab active" data-view="journey">21 天旅程</button>
+    <button class="tab" data-view="tools">練習工具</button>
+    <button class="tab" data-view="generator">引導詞生成器</button>
+    <button class="tab" data-view="favorites">我的收藏</button>
+    <button class="tab" data-view="about">訓練架構</button>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <!-- ============ JOURNEY ============ -->
+  <section class="view active" id="view-journey">
+    <div class="progress-card">
+      <div class="ring">
+        <svg width="88" height="88">
+          <circle cx="44" cy="44" r="38" stroke="rgba(255,255,255,.2)" stroke-width="8" fill="none"/>
+          <circle id="ringFill" cx="44" cy="44" r="38" stroke="#f3d68b" stroke-width="8" fill="none"
+            stroke-linecap="round" stroke-dasharray="238.76" stroke-dashoffset="238.76"/>
+        </svg>
+        <div class="num"><b id="ringPct">0%</b><small>完成</small></div>
+      </div>
+      <div class="progress-meta">
+        <h3>你的修練旅程</h3>
+        <div class="stats">
+          <div><b id="statDone">0</b><span>已完成 / 21 天</span></div>
+          <div><b id="statStreak">0</b><span>連續天數 🔥</span></div>
+        </div>
+        <button class="btn-reset" id="btnReset">重置進度</button>
+      </div>
+    </div>
+
+    <h2 class="title"><span class="dot"></span>每日核心訓練</h2>
+    <p class="lead">點開每一天，完成練習後勾選打卡。建議固定時段、安靜空間，朗讀時將語速放慢至平常的一半。</p>
+
+    <div id="dayList"></div>
+  </section>
+
+  <!-- ============ TOOLS ============ -->
+  <section class="view" id="view-tools">
+    <h2 class="title"><span class="dot"></span>呼吸節拍器 · 米爾頓節奏</h2>
+    <p class="lead">引導者的語速來自呼吸。先讓自己的呼吸穩定下沉，再以吐氣的節奏說出催眠字眼（放鬆、沉重、舒服）。</p>
+
+    <div class="tool-card">
+      <div class="breath-stage" id="breathCircle">
+        <div>
+          <div class="bphase" id="bPhase">準備</div>
+          <div class="bcount" id="bCount">—</div>
+        </div>
+      </div>
+      <div class="field-row">
+        <label class="field">吸氣（秒）<input type="number" id="inInhale" value="4" min="2" max="10"></label>
+        <label class="field">屏息（秒）<input type="number" id="inHold" value="4" min="0" max="10"></label>
+        <label class="field">吐氣（秒）<input type="number" id="inExhale" value="6" min="2" max="12"></label>
+      </div>
+      <div class="breath-controls">
+        <button class="btn btn-blue" id="btnBreath">開始</button>
+        <button class="btn btn-ghost" id="btnBreathStop">停止</button>
+      </div>
+      <p class="hint">建議節奏 4-4-6（吐氣長於吸氣）以啟動副交感神經。<br>帶領現場時，請在學員<b>吐氣</b>的瞬間說出引導指令。</p>
+    </div>
+
+    <h2 class="title"><span class="dot"></span>引導練習計時器</h2>
+    <p class="lead">為你的引導練習計時，培養穩定的時間掌控感。</p>
+    <div class="tool-card">
+      <div class="timer-display" id="timerDisp">05:00</div>
+      <div class="field-row">
+        <label class="field">分鐘<input type="number" id="inMin" value="5" min="1" max="60"></label>
+      </div>
+      <div class="breath-controls">
+        <button class="btn btn-blue" id="btnTimer">開始計時</button>
+        <button class="btn btn-ghost" id="btnTimerReset">重設</button>
+      </div>
+      <p class="hint">每說到（停頓）標記時，刻意留白 2–3 秒，讓學員的潛意識自行填補內容。</p>
+    </div>
+  </section>
+
+  <!-- ============ GENERATOR ============ -->
+  <section class="view" id="view-generator">
+    <h2 class="title"><span class="dot"></span>NLP 四階段引導詞生成器</h2>
+    <p class="lead">融合米爾頓模式、同步與引導、次感官調整與未來投影。選擇主題與風格，即時生成一段可朗讀／錄音的專屬引導詞。</p>
+
+    <div class="tool-card">
+      <div class="gen-grid">
+        <div class="gen-field">
+          <label>引導主題（痛點）</label>
+          <select id="genTopic">
+            <option value="stress">紓解壓力 · 放鬆</option>
+            <option value="anxiety">緩解焦慮 · 安定</option>
+            <option value="sleep">改善睡眠 · 沉靜</option>
+            <option value="confidence">提升自信 · 力量</option>
+            <option value="focus">專注清晰 · 校準</option>
+          </select>
+        </div>
+        <div class="gen-field">
+          <label>隱喻場景</label>
+          <select id="genScene">
+            <option value="mountain">日照金山 · 晨光金頂</option>
+            <option value="forest">霧氣森林 · 神祕小徑</option>
+            <option value="ocean">寧靜海洋 · 潮汐起伏</option>
+            <option value="light">溫暖光球 · 由心擴散</option>
+          </select>
+        </div>
+        <div class="gen-field">
+          <label>長度</label>
+          <select id="genLen">
+            <option value="short">精簡（約 3 分鐘）</option>
+            <option value="medium" selected>標準（約 6 分鐘）</option>
+            <option value="long">深度（約 10 分鐘）</option>
+          </select>
+        </div>
+        <div class="gen-field">
+          <label>稱呼</label>
+          <select id="genAddr">
+            <option value="你">你</option>
+            <option value="您">您</option>
+          </select>
+        </div>
+      </div>
+      <div class="gen-field" style="margin-bottom:16px">
+        <label>包含技巧（可多選）</label>
+        <div class="chips" id="genChips">
+          <span class="chip on" data-k="anchor">⚓ 心錨設定</span>
+          <span class="chip on" data-k="submod">🎨 次感官調整</span>
+          <span class="chip on" data-k="future">🔮 未來投影</span>
+          <span class="chip" data-k="count">🔢 倒數深化</span>
+        </div>
+      </div>
+      <button class="btn btn-primary" id="btnGen" style="width:100%">✨ 生成引導詞</button>
+    </div>
+
+    <div class="gen-out" id="genOut">
+      <div class="gen-out-head">
+        <h3 id="genTitle">引導詞</h3>
+        <div class="acts">
+          <button id="btnFav">⭐ 收藏</button>
+          <button id="btnCopy">📋 複製</button>
+          <button id="btnSpeak">🔊 試聽</button>
+          <button id="btnStopSpeak">⏹ 停止</button>
+        </div>
+      </div>
+      <div id="genBody"></div>
+      <p class="hint" style="padding:6px 16px 16px">朗讀提醒：語速放慢一半，句尾語調下沉；第一→第三階段聲音漸沉，第四階段喚醒時聲音轉為明亮有活力。</p>
+    </div>
+  </section>
+
+  <!-- ============ FAVORITES ============ -->
+  <section class="view" id="view-favorites">
+    <h2 class="title"><span class="dot"></span>我的引導詞收藏</h2>
+    <p class="lead">在生成器中按「⭐ 收藏」即可把引導詞存到這裡（儲存於本機）。隨時展開、複製、朗讀或刪除。</p>
+    <div id="favList"></div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="view" id="view-about">
+    <h2 class="title"><span class="dot"></span>三週訓練架構</h2>
+    <p class="lead">本課程依據 NLP 培訓師冥想引導的核心技術設計，由內而外、循序漸進。</p>
+
+    <div class="about-card">
+      <h3>🌄 設計理念：日照金山</h3>
+      <p>金山本是冷峻的岩體，唯有當晨光升起、金光照耀，整座山才煥然發亮。引導者亦然——技巧是山體，而你的「狀態」（COACH State）就是那道光。本訓練先點亮你內在的光，再讓技巧自然流淌。</p>
+    </div>
+
+    <div class="about-card">
+      <h3>📐 三階段遞進</h3>
+      <div class="pillars">
+        <div class="pillar"><div class="ic">🧭</div><b>第一週 · 奠基</b><span>狀態與聲音：COACH 狀態、腹式呼吸、米爾頓語調、停頓與同步。</span></div>
+        <div class="pillar"><div class="ic">🗣️</div><b>第二週 · 核心</b><span>語言與感官：名詞化、模糊語言、同步引導、次感官、心錨。</span></div>
+        <div class="pillar"><div class="ic">🏔️</div><b>第三週 · 整合</b><span>實戰精通：三段式流程、未來投影、喚醒、時間線、痛點客製。</span></div>
+      </div>
+    </div>
+
+    <div class="about-card">
+      <h3>🧱 四大核心技術</h3>
+      <div class="pillars">
+        <div class="pillar"><div class="ic">🎙️</div><b>米爾頓模式</b><span>藝術性模糊語言，讓潛意識自動填補、避免抗拒。</span></div>
+        <div class="pillar"><div class="ic">🔁</div><b>同步與引導</b><span>先說真實感受（Pacing），再帶入目標（Leading）。</span></div>
+        <div class="pillar"><div class="ic">🎨</div><b>次感官 & 心錨</b><span>調整視/聽/體覺編碼，將平靜儲存於身體動作。</span></div>
+        <div class="pillar"><div class="ic">⏳</div><b>未來投影</b><span>把冥想中的平靜延伸到未來的挑戰時刻。</span></div>
+      </div>
+    </div>
+
+    <div class="about-card">
+      <h3>🎯 三段式黃金引導流程</h3>
+      <p><b>① 破冰與身體同步</b>　運用生理狀態與環境聲音，讓意識與當下連結。</p>
+      <p><b>② 語言堆疊與深化</b>　運用米爾頓模式、催眠語調、倒數或隱喻深化 α 波。</p>
+      <p><b>③ 未來模擬與喚醒</b>　把平靜帶回現實、投影未來，再以明亮聲音喚醒。</p>
+    </div>
+
+    <div class="about-card">
+      <h3>💡 培訓師實戰小貼士</h3>
+      <p>• <b>呼應呼吸：</b>觀察學員胸口起伏，在其吐氣時說出催眠字眼，效果加倍。</p>
+      <p>• <b>語調轉折：</b>前三階段越來越低沉緩慢；第四階段數 1-2-3 時聲音轉亮、有活力。</p>
+      <p>• <b>刻意留白：</b>每個「停頓」處留 2–3 秒，給潛意識工作的空間。</p>
+    </div>
+  </section>
+
+</main>
+
+<div id="installBar">
+  <span style="font-size:13px">把「日照金山」加到主畫面，隨時離線練習</span>
+  <button class="yes" id="installYes">安裝</button>
+  <button class="no" id="installNo">稍後</button>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<footer>
+  日照金山 · NLP 培訓師冥想引導 21 天自我訓練 ｜ 進度自動儲存於本機<br>
+  本工具為培訓教學輔助用途，非醫療診斷或治療建議。
+</footer>
+
+<script>
+/* ====================== 21-DAY CURRICULUM DATA ====================== */
+const DAYS = [
+  // ---------- WEEK 1 ----------
+  {w:1,d:1,theme:"認識引導者的責任 · 居中 (Centered)",
+   tag:"COACH 狀態",dur:"15 分鐘",
+   obj:"理解 NLP 冥想引導不是「唸稿」，而是「狀態的傳遞」——先安頓自己，才能安頓他人。",
+   practice:["靜坐，腹式呼吸 5 分鐘，找到身體中軸的穩定感。","想像一條線從頭頂貫穿尾椎，落地生根。","出聲朗讀下方金句一次，感受「居中」的聲音。"],
+   check:["我能在 3 次呼吸內讓自己安定下來嗎？","我的身體有沒有一個穩定的中心？"],
+   script:"很好……現在，找一個最舒服的姿勢坐好或躺好。輕輕地……閉上你的眼睛。（停頓）"},
+  {w:1,d:2,theme:"腹式呼吸與節奏 · 放慢一半",
+   tag:"發聲基礎",dur:"15 分鐘",
+   obj:"建立可控的慢速呼吸節奏，作為引導語速的內在節拍器。",
+   practice:["4-7-8 呼吸法 × 8 輪（吸 4、屏 7、吐 8）。","錄下自己 1 分鐘的呼吸聲，聆聽節奏。","用呼吸的節奏，慢慢唸出金句，吐氣時說話。"],
+   check:["我的吐氣是否比吸氣長？","說話速度是否已放慢到平常的一半？"],
+   script:"現在，把注意力帶到你的呼吸上。吸氣……感覺到空氣帶來的微微涼意……呼氣……感覺到身體的沉重與放鬆……（停頓）"},
+  {w:1,d:3,theme:"米爾頓語調 (Milton Tone)",
+   tag:"催眠語調",dur:"15 分鐘",
+   obj:"練習低沉、平緩、句尾下降的催眠語調，與日常上揚語調區隔。",
+   practice:["朗讀金句兩次：一次用日常語調，一次刻意句尾下沉。","錄音對比，標出句尾上揚的地方並修正。","練習把音量降低 20%、語速降低 50%。"],
+   check:["我的句尾是往下沉，還是不自覺往上揚？","聲音是否夠低沉、平穩？"],
+   script:"這些聲音都不會打擾你，反而會像背景音樂一樣，陪伴著你……讓你接下來的每一次呼吸，都變得更加輕鬆、更加自在。（停頓）"},
+  {w:1,d:4,theme:"COACH 五元素整合",
+   tag:"COACH 狀態",dur:"15 分鐘",
+   obj:"完整進入教練狀態：Centered 居中、Open 開放、Attentive 專注、Connected 連結、Hospitable 包容。",
+   practice:["設計一段 90 秒的「引導前自我預備儀式」。","逐一喚起五個狀態，各停留約 3 次呼吸。","以此狀態朗讀金句，感受聲音的不同。"],
+   check:["五個元素中，哪一個對我最難？","進入狀態後，我的注意力是否更開放、更連結？"],
+   script:"輕輕地……閉上你的眼睛。當你閉上眼睛的時候，你可能會聽到周圍一些細微的聲音……（停頓）"},
+  {w:1,d:5,theme:"停頓的力量 · 刻意留白",
+   tag:"節奏掌控",dur:"15 分鐘",
+   obj:"學會在關鍵處留白 2–3 秒，讓學員的潛意識有空間工作。",
+   practice:["朗讀金句，每個（停頓）默數 1-2-3 再繼續。","錄音回聽，確認停頓是否足夠、自然。","練習在『一個字之後』也能停頓而不慌張。"],
+   check:["我會不會因為怕冷場而填滿每個空隙？","停頓時，我自己是否也保持安定？"],
+   script:"也許是冷氣的運轉聲、也許是窗外的環境聲，（停頓）或者，就只是我對你說話的聲音。（停頓）"},
+  {w:1,d:6,theme:"同步學員呼吸 (Pacing)",
+   tag:"同步與引導",dur:"15 分鐘",
+   obj:"練習觀察並呼應對方的呼吸，在其吐氣時下達放鬆指令。",
+   practice:["對鏡子或夥伴，觀察胸口起伏節奏。","在『吐氣』瞬間說出「放鬆」「沉重」「舒服」。","先描述對方真實狀態，再帶入引導。"],
+   check:["我能準確抓到吐氣的時機嗎？","我的指令是否與對方的生理節奏同步？"],
+   script:"你正坐在椅子上，聽著我的聲音……而隨著你每一次的呼吸，你的身體會變得更加放鬆。"},
+  {w:1,d:7,theme:"第一週整合 · 錄製身體同步引導",
+   tag:"週整合",dur:"20 分鐘",
+   obj:"整合本週所學，完成一段 3 分鐘「身體與環境同步」的完整引導錄音並自評。",
+   practice:["以 COACH 狀態開場，腹式呼吸定調。","用米爾頓語調、含 3 處刻意停頓。","錄音後依檢核表自評，記下一個進步點。"],
+   check:["整段語速是否一致地慢？","聽起來像『安全的陪伴』還是『指令的宣讀』？"],
+   script:"很好……就是這樣……（停頓）讓你接下來的每一次呼吸，都變得更加輕鬆、更加自在。"},
+  // ---------- WEEK 2 ----------
+  {w:2,d:8,theme:"名詞化 (Nominalizations)",
+   tag:"米爾頓模式",dur:"15 分鐘",
+   obj:"善用「放鬆、平靜、智慧、自癒」等抽象名詞，讓學員各自賦予內容。",
+   practice:["寫下 10 個抽象名詞化詞彙。","各造一個冥想引導句。","朗讀，感受抽象詞如何留出想像空間。"],
+   check:["我的用詞是否太具體、限制了學員的體驗？","抽象詞是否自然、不生硬？"],
+   script:"每個人大腦裡都有一個特別的地方，存放著名為『平靜』的感受。（停頓）"},
+  {w:2,d:9,theme:"藝術性模糊語言",
+   tag:"米爾頓模式",dur:"15 分鐘",
+   obj:"使用不確定的人稱與動詞，讓每個人依自身經驗去體驗。",
+   practice:["把 5 句具體指令改寫成模糊語言。","例：『放鬆肩膀』→『某個地方，可能開始鬆開了』。","朗讀比較兩者的接受度。"],
+   check:["我的語言是否給了潛意識選擇權？","會不會太模糊到失去方向？（拿捏平衡）"],
+   script:"我不知道對你來說，那份平靜是一種類型、一種顏色、還是一種溫度……（停頓）"},
+  {w:2,d:10,theme:"同步與引導 (Pacing & Leading)",
+   tag:"米爾頓模式",dur:"15 分鐘",
+   obj:"先陳述當下無可否認的事實（同步），再用『而隨著』帶入目標（引導）。",
+   practice:["寫 3 組『同步 → 引導』句子。","同步用可驗證事實，引導用正向目標。","串接朗讀，確認過渡自然。"],
+   check:["同步句是否百分百為真？","引導句是否順勢、不突兀？"],
+   script:"你正聽著我的聲音，感覺到椅子的支撐……而隨著每一次吐氣，那份放鬆會越來越深。"},
+  {w:2,d:11,theme:"次感官：視覺調整",
+   tag:"次感官",dur:"15 分鐘",
+   obj:"引導學員把壓力畫面變暗、縮小、拉遠；把放鬆畫面放大、變亮、加深色彩。",
+   practice:["寫一段『把壓力畫面縮小推遠』的引導。","加入色彩、大小、距離的調整動詞。","朗讀並想像，確認畫面真的會動。"],
+   check:["我是否同時調整了亮度、大小與距離？","語言是否引導出『可操作』的畫面？"],
+   script:"把那個畫面的色彩調暗……變黑白……把它縮小、縮小，推到好遠好遠的水平線那一端。（停頓）"},
+  {w:2,d:12,theme:"次感官：聽覺與體覺",
+   tag:"次感官",dur:"15 分鐘",
+   obj:"加入聲音與身體感受的調整，讓多重感官協同放鬆。",
+   practice:["在引導中加入『聽一聽……』『感覺一下……』。","引導周圍聲音變安靜、身體變輕盈。","三感（視/聽/體）串成一段。"],
+   check:["我是否照顧到不同感官偏好的學員？","體覺描述是否具體可感？"],
+   script:"聽一聽，周圍的聲音是不是變得更安靜了？（停頓）感覺一下，當壓力變小、變遠，你的身體是不是突然更輕盈了？"},
+  {w:2,d:13,theme:"心錨設定 (Anchoring)",
+   tag:"心錨",dur:"15 分鐘",
+   obj:"在最深層放鬆時，把這份平靜連結到一個身體動作，形成可隨時提取的心錨。",
+   practice:["完整朗讀『捏拇指與食指』的心錨設定段落。","在情緒最高點下錨，並重複強化。","自己親身設定一個平靜心錨並測試。"],
+   check:["下錨時機是否在狀態最深處？","心錨動作是否獨特、易於重現？"],
+   script:"請將你右手的大拇指和食指，輕輕地捏在一起。（停頓）把這份平靜的感覺，深深地烙印在這個動作裡……（停頓）這就是你的平靜心錨。"},
+  {w:2,d:14,theme:"第二週整合 · 隱喻與深化",
+   tag:"週整合",dur:"20 分鐘",
+   obj:"用倒數（10→1）或隱喻故事（如霧氣森林）深化學員的 α 波。",
+   practice:["寫一個『走入霧氣森林』的隱喻深化段落。","結合倒數計時，逐步引導向下、向內。","串接本週語言技巧錄音自評。"],
+   check:["隱喻是否開放、人人可代入？","深化過程是否平順、由淺入深？"],
+   script:"想像你正走入一座充滿霧氣的神祕森林，每往前一步，就更深入、更安靜……10……9……越來越放鬆……"},
+  // ---------- WEEK 3 ----------
+  {w:3,d:15,theme:"三段式黃金流程複習",
+   tag:"流程整合",dur:"15 分鐘",
+   obj:"熟練破冰同步 → 深化堆疊 → 未來喚醒的三段式結構與彼此銜接。",
+   practice:["畫出三段式流程圖，標註每段目的。","為每段各寫一句『過場句』。","默背流程，不看稿走一遍。"],
+   check:["三段之間的過渡是否流暢？","每一段的目的我都清楚嗎？"],
+   script:"【一】身體同步 ─→ 【二】語言深化 ─→ 【三】未來喚醒"},
+  {w:3,d:16,theme:"未來投影 (Future Pacing)",
+   tag:"未來投影",dur:"15 分鐘",
+   obj:"把冥想中的平靜延伸到未來——想像未來面對挑戰時依然從容自信。",
+   practice:["寫一段『把平靜帶到明天/下週』的投影。","加入畫面：未來的你有多自信、多優雅。","朗讀，讓未來感真實鮮明。"],
+   check:["未來畫面是否具體、正向、可感？","是否把資源（平靜）明確帶入未來情境？"],
+   script:"想像未來的你，在面對忙碌時，因為擁有這份平靜與心錨，你的表情看起來有多麼自信？（停頓）"},
+  {w:3,d:17,theme:"喚醒技術 · 語調轉亮",
+   tag:"喚醒",dur:"15 分鐘",
+   obj:"以 1-2-3 數醒，聲音由低沉轉為明亮有活力，讓學員清醒回到當下。",
+   practice:["練習數 1-2-3，每個數字聲音漸亮。","加入『手指腳趾恢復力氣、深呼吸』指令。","結尾以精神奕奕的『歡迎回來！』收束。"],
+   check:["我的聲音是否成功從催眠轉為清醒？","學員是否能精神飽滿地回到現實？"],
+   script:"1……感覺手指腳趾恢復了力氣。2……做一個深呼吸，頭腦清爽。3……輕輕張開眼睛，歡迎回來！"},
+  {w:3,d:18,theme:"時間線療癒入門",
+   tag:"進階技術",dur:"20 分鐘",
+   obj:"認識時間線冥想：以抽離（第三人稱）視角重看過去，帶現在的智慧回去療癒。",
+   practice:["練習引導『漂浮到時間線上方』。","以第三人稱觀點重看一個過去情境。","帶入現在的資源，重塑感受。"],
+   check:["我是否能安全地引導抽離視角？","是否把『現在的智慧』明確帶回過去？"],
+   script:"讓自己輕輕漂浮到時間線的上方，從高處、以一個旁觀者的眼光，溫柔地看著過去的自己……"},
+  {w:3,d:19,theme:"痛點客製 · 隱喻微調",
+   tag:"客製化",dur:"15 分鐘",
+   obj:"針對焦慮、失眠、自信等不同需求，微調第二階段的隱喻與名詞化內容。",
+   practice:["為 3 種痛點各設計一個對應隱喻。","調整名詞化用詞（安定/沉睡/力量）。","用生成器產出對照、比較差異。"],
+   check:["隱喻是否貼合該痛點的心理需求？","用詞是否引導向正確的目標狀態？"],
+   script:"焦慮→安定的港灣；失眠→沉入溫暖的深海；自信→金山被晨光點亮。"},
+  {w:3,d:20,theme:"全程串接 · 完整引導",
+   tag:"實戰演練",dur:"25 分鐘",
+   obj:"把四階段串成一段 8–10 分鐘的完整引導，並完成錄音。",
+   practice:["依四階段結構完整錄製一段引導。","含心錨、次感官、未來投影、喚醒。","依檢核表全面自評。"],
+   check:["四階段是否完整且銜接流暢？","語調曲線（沉→亮）是否到位？"],
+   script:"第一階段安頓 → 第二階段深化 → 第三階段下錨 → 第四階段喚醒。"},
+  {w:3,d:21,theme:"結業實戰 · 帶領與複盤",
+   tag:"結業",dur:"30 分鐘",
+   obj:"為一位真實學員（或夥伴）帶領一場完整冥想，收集回饋並複盤。",
+   practice:["實際帶領一場 8–10 分鐘冥想。","邀請對方回饋：哪裡最放鬆、哪裡出戲。","寫下三個強項、一個下階段目標。"],
+   check:["學員是否真正進入放鬆狀態？","我已準備好帶領真實課程了嗎？"],
+   script:"恭喜你完成 21 天！金山已被你內在的光點亮——現在，把這份光帶給更多人。"}
+];
+
+/* ====================== STATE / STORAGE ====================== */
+const LS = 'rijin_jinshan_progress_v1';
+let done = JSON.parse(localStorage.getItem(LS) || '[]');
+function save(){localStorage.setItem(LS, JSON.stringify(done));}
+
+const $ = (s,el=document)=>el.querySelector(s);
+const $$ = (s,el=document)=>[...el.querySelectorAll(s)];
+
+function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),1800);}
+
+/* 全域中文語音朗讀（語速放慢、低音、停頓） */
+let _voicesReady=false;
+function loadVoices(){if('speechSynthesis'in window){speechSynthesis.getVoices();_voicesReady=true;}}
+if('speechSynthesis'in window){loadVoices();speechSynthesis.onvoiceschanged=loadVoices;}
+function speakZh(text,rate){
+  if(!('speechSynthesis'in window)){toast('此瀏覽器不支援語音朗讀');return false;}
+  speechSynthesis.cancel();
+  const clean=text.replace(/【[^】]+】（[^）]*）/g,'').replace(/（停頓[^）]*）/g,'，，，');
+  const u=new SpeechSynthesisUtterance(clean);
+  const vs=speechSynthesis.getVoices();
+  const zh=vs.find(v=>/zh.TW|zh.Hant|Taiwan/i.test(v.lang+v.name))||vs.find(v=>/zh|Chinese|Hans|CN/i.test(v.lang+v.name));
+  if(zh)u.voice=zh;
+  u.lang='zh-TW';u.rate=rate||.72;u.pitch=.9;
+  speechSynthesis.speak(u);return true;
+}
+function stopSpeak(){if('speechSynthesis'in window)speechSynthesis.cancel();}
+
+/* ====================== RENDER DAYS ====================== */
+const WEEK_TITLES = {1:'第一週 · 奠基：狀態與聲音',2:'第二週 · 核心：語言與感官',3:'第三週 · 整合：實戰精通'};
+function renderDays(){
+  const list = $('#dayList'); list.innerHTML='';
+  let curWeek = 0;
+  DAYS.forEach(day=>{
+    if(day.w!==curWeek){
+      curWeek=day.w;
+      const wh=document.createElement('div');wh.className='week-head';
+      wh.innerHTML=`<span class="wnum">WEEK ${day.w}</span><h3>${WEEK_TITLES[day.w].split('：')[1]||WEEK_TITLES[day.w]}</h3><span class="line"></span>`;
+      list.appendChild(wh);
+    }
+    const isDone = done.includes(day.d);
+    const el=document.createElement('div');
+    el.className='day'+(isDone?' done':'');
+    el.dataset.d=day.d;
+    const scriptHtml = day.script.replace(/（停頓）/g,'<span class="pause">（停頓）</span>');
+    el.innerHTML=`
+      <div class="day-head">
+        <div class="daynum"><small>DAY</small><b>${day.d}</b></div>
+        <div class="dinfo">
+          <div class="theme">${day.theme}</div>
+          <div class="obj">${day.obj}</div>
+        </div>
+        <div class="check" title="打卡完成">✓</div>
+        <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+      <div class="day-body">
+        <span class="tag">${day.tag}</span>
+        <span class="duration">· ⏱ ${day.dur}</span>
+        <div class="block"><h4>訓練目標</h4><p style="font-size:14px">${day.obj}</p></div>
+        <div class="block"><h4>核心練習</h4><ul>${day.practice.map(p=>`<li>${p}</li>`).join('')}</ul></div>
+        <div class="block check-block"><h4>自我檢核</h4><ul>${day.check.map(c=>`<li>${c}</li>`).join('')}</ul></div>
+        <div class="block"><h4>今日引導金句</h4><div class="script-quote">${scriptHtml}</div>
+          <div class="day-acts">
+            <button class="mini-btn read" type="button">🔊 朗讀金句</button>
+            <button class="mini-btn stop" type="button">⏹ 停止</button>
+          </div>
+        </div>
+      </div>`;
+    list.appendChild(el);
+  });
+  bindDays();
+  updateProgress();
+}
+function bindDays(){
+  $$('.day').forEach(el=>{
+    const d=+el.dataset.d;
+    $('.day-head',el).addEventListener('click',(e)=>{
+      if(e.target.closest('.check'))return;
+      el.classList.toggle('open');
+    });
+    $('.check',el).addEventListener('click',(e)=>{
+      e.stopPropagation();
+      const i=done.indexOf(d);
+      if(i>=0){done.splice(i,1);el.classList.remove('done');}
+      else{done.push(d);el.classList.add('done');toast('第 '+d+' 天完成 ✨');}
+      save();updateProgress();
+    });
+    const day=DAYS.find(x=>x.d===d);
+    $('.read',el).addEventListener('click',()=>{if(speakZh(day.script))toast('朗讀第 '+d+' 天金句（語速放慢）🔊');});
+    $('.stop',el).addEventListener('click',stopSpeak);
+  });
+}
+
+/* ====================== PROGRESS ====================== */
+function calcStreak(){
+  // longest run of consecutive completed days from day 1
+  let s=0;for(let i=1;i<=21;i++){if(done.includes(i))s++;else break;}return s;
+}
+function updateProgress(){
+  const n=done.length, pct=Math.round(n/21*100);
+  const circ=2*Math.PI*38;
+  $('#ringFill').style.strokeDashoffset = circ*(1-n/21);
+  $('#ringPct').textContent=pct+'%';
+  $('#statDone').textContent=n;
+  $('#statStreak').textContent=calcStreak();
+}
+$('#btnReset').addEventListener('click',()=>{
+  if(confirm('確定要重置所有打卡進度嗎？')){done=[];save();renderDays();toast('進度已重置');}
+});
+
+/* ====================== TABS ====================== */
+$$('.tab').forEach(t=>t.addEventListener('click',()=>{
+  $$('.tab').forEach(x=>x.classList.remove('active'));
+  $$('.view').forEach(x=>x.classList.remove('active'));
+  t.classList.add('active');
+  $('#view-'+t.dataset.view).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}));
+
+/* ====================== BREATHING PACER ====================== */
+let breathTimer=null;
+const bCircle=$('#breathCircle'),bPhase=$('#bPhase'),bCount=$('#bCount');
+function startBreath(){
+  stopBreath();
+  const inh=+$('#inInhale').value, hold=+$('#inHold').value, exh=+$('#inExhale').value;
+  const seq=[{n:'吸氣',t:inh,c:'inhale'},{n:'屏息',t:hold,c:'hold'},{n:'吐氣',t:exh,c:'exhale'}].filter(s=>s.t>0);
+  let si=0,left=seq[0].t;
+  function tick(){
+    const st=seq[si];
+    bCircle.className='breath-stage '+st.c;
+    bPhase.textContent=st.n;bCount.textContent=left;
+    bCircle.style.transitionDuration=st.t+'s';
+    left--;
+    if(left<0){si=(si+1)%seq.length;left=seq[si].t-1;
+      bCircle.className='breath-stage '+seq[si].c;bPhase.textContent=seq[si].n;bCount.textContent=seq[si].t;
+    }
+  }
+  tick();breathTimer=setInterval(tick,1000);
+  $('#btnBreath').textContent='進行中…';
+}
+function stopBreath(){if(breathTimer){clearInterval(breathTimer);breathTimer=null;}bCircle.className='breath-stage';bPhase.textContent='準備';bCount.textContent='—';bCircle.style.transitionDuration='.6s';$('#btnBreath').textContent='開始';}
+$('#btnBreath').addEventListener('click',startBreath);
+$('#btnBreathStop').addEventListener('click',stopBreath);
+
+/* ====================== PRACTICE TIMER ====================== */
+let tInt=null,tLeft=300;
+function fmt(s){return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');}
+function setTimerDisp(){$('#timerDisp').textContent=fmt(tLeft);}
+$('#btnTimer').addEventListener('click',()=>{
+  if(tInt){clearInterval(tInt);tInt=null;$('#btnTimer').textContent='繼續';return;}
+  if(tLeft<=0)tLeft=(+$('#inMin').value||5)*60;
+  $('#btnTimer').textContent='暫停';
+  tInt=setInterval(()=>{tLeft--;setTimerDisp();if(tLeft<=0){clearInterval(tInt);tInt=null;$('#btnTimer').textContent='開始計時';toast('練習時間到 🔔');try{beep();}catch(e){}}},1000);
+});
+$('#btnTimerReset').addEventListener('click',()=>{if(tInt){clearInterval(tInt);tInt=null;}tLeft=(+$('#inMin').value||5)*60;setTimerDisp();$('#btnTimer').textContent='開始計時';});
+$('#inMin').addEventListener('change',()=>{if(!tInt){tLeft=(+$('#inMin').value||5)*60;setTimerDisp();}});
+function beep(){const a=new (window.AudioContext||window.webkitAudioContext)();const o=a.createOscillator(),g=a.createGain();o.connect(g);g.connect(a.destination);o.frequency.value=528;g.gain.setValueAtTime(.001,a.currentTime);g.gain.exponentialRampToValueAtTime(.3,a.currentTime+.05);g.gain.exponentialRampToValueAtTime(.001,a.currentTime+1.5);o.start();o.stop(a.currentTime+1.6);}
+setTimerDisp();
+
+/* ====================== SCRIPT GENERATOR ====================== */
+const SCENES={
+  mountain:{enter:"想像你正站在一座高山的腳下，清晨的第一道金光，正緩緩地、溫暖地照亮山頂",
+    deepen:"看著那道金光，一寸一寸地往下流淌，把整座山染成溫暖的金色……而那份光，也正照進你的身體裡",
+    color:"金色的晨光"},
+  forest:{enter:"想像你正走入一座充滿薄霧的神祕森林，腳下是柔軟的青苔，空氣裡有清新的氣息",
+    deepen:"每往前走一步，森林就更深、更安靜……陽光透過樹葉灑下，斑駁而溫柔",
+    color:"森林裡灑落的光"},
+  ocean:{enter:"想像你正坐在一片寧靜的海邊，海浪一波一波，輕輕地、規律地拍打著沙灘",
+    deepen:"隨著每一道潮水的來與去，你的呼吸也跟著海洋的節奏，一起一伏，越來越深",
+    color:"海面上粼粼的波光"},
+  light:{enter:"想像在你的胸口中央，有一顆溫暖而柔和的光球，隨著呼吸，微微地發著光",
+    deepen:"每一次吸氣，那顆光球就更亮一些；每一次吐氣，溫暖的光，就從胸口慢慢地往全身擴散",
+    color:"從你心中散發的光"}
+};
+const TOPICS={
+  stress:{word:"放鬆",goal:"徹底的放鬆與舒緩",future:"從容、自在地面對忙碌"},
+  anxiety:{word:"安定",goal:"踏實的安定與平靜",future:"穩穩地、安心地面對不確定"},
+  sleep:{word:"沉靜",goal:"深沉的睡意與寧靜",future:"輕鬆地進入香甜的睡眠"},
+  confidence:{word:"力量",goal:"由內而生的自信與力量",future:"自信、優雅地展現自己"},
+  focus:{word:"清晰",goal:"專注的清明與校準",future:"清晰、專注地投入每件事"}
+};
+let genTech={anchor:true,submod:true,future:true,count:false};
+$$('#genChips .chip').forEach(c=>c.addEventListener('click',()=>{c.classList.toggle('on');genTech[c.dataset.k]=c.classList.contains('on');}));
+
+function buildScript(){
+  const topic=$('#genTopic').value, scene=$('#genScene').value, len=$('#genLen').value, you=$('#genAddr').value;
+  const T=TOPICS[topic], S=SCENES[scene];
+  const P='<span class="pause">（停頓 2–3 秒）</span>';
+  const long=len==='long', med=len!=='short';
+
+  // Stage 1
+  let s1=`很好……現在，找一個最舒服的姿勢，坐好或躺好。輕輕地……閉上${you}的眼睛。${P}`;
+  s1+=`\n當${you}閉上眼睛的時候，${you}可能會聽到周圍一些細微的聲音，也許是空調的運轉聲、也許是窗外的環境聲，或者，就只是我對${you}說話的聲音。${P}`;
+  s1+=`\n這些聲音都不會打擾${you}，反而會像背景音樂一樣，陪伴著${you}，讓接下來的每一次呼吸，都變得更加輕鬆、更加自在。`;
+  if(med)s1+=`${P}\n現在，把注意力帶到${you}的呼吸上。吸氣……感覺空氣帶來的微微涼意……呼氣……感覺身體的沉重與放鬆……${P}很好……就是這樣……`;
+
+  // Stage 2
+  let s2=`隨著${you}的呼吸，${you}可以開始注意到，${you}的肩膀……可能開始放鬆了……${you}的眼皮……也變得越來越沉重……${P}`;
+  s2+=`\n每個人的心裡，都有一個特別的地方，存放著名為『${T.word}』的感受。我不知道對${you}來說，那份${T.word}是一種顏色、一種溫度，還是一種畫面……${P}`;
+  s2+=`\n${S.enter}。${med?S.deepen+'。':''}${P}`;
+  if(genTech.count){
+    s2+=`\n現在，我會從 10 數到 1，每一個數字，都讓${you}更往下、更深入這份${T.word}……10……9……越來越沉……8……7……${long?'6……5……越來越深……4……3……':''}2……1……${P}`;
+  }
+  if(genTech.submod){
+    s2+=`\n如果${you}腦海中還有任何壓力的畫面、或煩惱的聲音，${you}可以試著在心裡，把那個畫面的色彩調暗……變黑白……把它縮小、縮小，推到好遠好遠的水平線那一端。${P}聽一聽，周圍是不是更安靜了？感覺一下，當壓力變小、變遠，${you}的身體是不是更輕盈了？${P}`;
+  }
+  s2+=`\n就讓那份${T.goal}，伴著${S.color}，慢慢地、從${you}的胸口擴散到全身。`;
+
+  // Stage 3 (anchor)
+  let s3='';
+  if(genTech.anchor){
+    s3=`現在，${you}正享受著這份完全屬於${you}自己的、深層的${T.word}與智慧。${P}`;
+    s3+=`\n為了讓${you}以後隨時都能回到這個狀態，我要請${you}做一個簡單的動作：把${you}右手的大拇指和食指，輕輕地捏在一起。${P}`;
+    s3+=`\n當${you}捏住這兩個手指的時候，去感受此時此刻體內那股最${T.word}、最平靜、最有力量的能量，把這份感覺，深深地烙印在這個動作裡……${P}這就是${you}的『${T.word}心錨』。以後不論遇到什麼，只要${you}再次捏住這兩個手指，潛意識就會立刻記起現在這份${T.word}。${P}很好……現在可以放開手指。`;
+  }
+
+  // Stage 4 (future + awaken)
+  let s4='';
+  if(genTech.future){
+    s4=`在我們準備結束之前，讓${you}的心，帶著這份${T.word}，往前飛到明天、下週、甚至下個月……${P}`;
+    s4+=`\n想像未來的${you}，${T.future}的樣子，看起來有多麼從容、多麼${T.word==='力量'?'自信':'安定'}？${P}把這幅充滿力量的畫面，留在心裡。${P}`;
+  }
+  s4+=`\n現在，我要從 1 數到 3。當我數到 3 的時候，${you}會帶著滿滿的活力，回到這個空間。`;
+  s4+=`\n1……感覺${you}的手指和腳趾，恢復了力氣，動一動身體。`;
+  s4+=`\n2……做一個深呼吸，把所有的${T.word}和能量，深深吸進身體裡，頭腦非常清爽、精神奕奕。`;
+  s4+=`\n3……輕輕地張開眼睛，回到當下，歡迎回來！`;
+
+  const stages=[
+    {h:'第一階段 · 身體與環境同步',p:'建立 COACH 狀態，用真實感知降低防衛心',t:s1},
+    {h:'第二階段 · 語言堆疊與次感官深化',p:'米爾頓模糊語言 × 隱喻 × 次感官，進入催眠狀態',t:s2}
+  ];
+  if(s3)stages.push({h:'第三階段 · 心錨設定與資源連結',p:'把'+T.word+'連結到身體動作，形成可提取的心錨',t:s3});
+  stages.push({h:(s3?'第四':'第三')+'階段 · 未來投影與喚醒',p:'延伸到未來情境，再以明亮聲音喚醒',t:s4});
+  return {stages,topic:T,len};
+}
+
+const TITLE_MAP={stress:'紓壓放鬆',anxiety:'安定減焦',sleep:'助眠沉靜',confidence:'自信力量',focus:'專注清晰'};
+let lastPlain='', lastResult=null;
+function stagesToPlain(stages){return stages.map(s=>`【${s.h}】（目的：${s.p}）\n「${s.t.replace(/<[^>]+>/g,'')}」`).join('\n\n');}
+function renderStages(stages){
+  return stages.map(s=>
+    `<div class="gen-stage"><h4>${s.h}</h4><div class="purpose">目的：${s.p}</div><p>「${s.t}」</p></div>`
+  ).join('');
+}
+$('#btnGen').addEventListener('click',()=>{
+  const {stages}=buildScript();
+  const title='🎧 NLP '+TITLE_MAP[$('#genTopic').value]+'冥想引導詞';
+  $('#genTitle').textContent=title;
+  $('#genBody').innerHTML=renderStages(stages);
+  lastPlain=stagesToPlain(stages);
+  lastResult={title,stages:stages.map(s=>({h:s.h,p:s.p,t:s.t}))};
+  $('#genOut').classList.add('show');
+  $('#genOut').scrollIntoView({behavior:'smooth',block:'start'});
+});
+$('#btnCopy').addEventListener('click',async()=>{
+  try{await navigator.clipboard.writeText(lastPlain);toast('引導詞已複製 📋');}
+  catch(e){const ta=document.createElement('textarea');ta.value=lastPlain;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();toast('引導詞已複製 📋');}
+});
+$('#btnSpeak').addEventListener('click',()=>{if(lastPlain&&speakZh(lastPlain))toast('開始試聽（語速已放慢）🔊');});
+$('#btnStopSpeak').addEventListener('click',stopSpeak);
+
+/* ====================== FAVORITES ====================== */
+const LS_FAV='rijin_jinshan_favs_v1';
+let favs=JSON.parse(localStorage.getItem(LS_FAV)||'[]');
+function saveFavs(){localStorage.setItem(LS_FAV,JSON.stringify(favs));}
+$('#btnFav').addEventListener('click',()=>{
+  if(!lastResult){toast('請先生成引導詞');return;}
+  const ts=new Date();
+  const stamp=`${ts.getFullYear()}/${String(ts.getMonth()+1).padStart(2,'0')}/${String(ts.getDate()).padStart(2,'0')} ${String(ts.getHours()).padStart(2,'0')}:${String(ts.getMinutes()).padStart(2,'0')}`;
+  favs.unshift({id:Date.now(),title:lastResult.title,stamp,stages:lastResult.stages});
+  saveFavs();renderFavs();toast('已加入收藏 ⭐');
+});
+function favPlain(f){return f.stages.map(s=>`【${s.h}】（目的：${s.p}）\n「${s.t.replace(/<[^>]+>/g,'')}」`).join('\n\n');}
+function renderFavs(){
+  const list=$('#favList');
+  if(!favs.length){list.innerHTML='<div class="fav-empty"><span class="big">⭐</span>還沒有收藏的引導詞。<br>到「引導詞生成器」生成後按「⭐ 收藏」吧。</div>';return;}
+  list.innerHTML=favs.map(f=>`
+    <div class="fav-card" data-id="${f.id}">
+      <div class="fav-head">
+        <div class="ic">🎧</div>
+        <div class="fi"><b>${f.title.replace(/^🎧 /,'')}</b><span>${f.stamp} · ${f.stages.length} 階段</span></div>
+        <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5a6675" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+      <div class="fav-body">
+        ${f.stages.map(s=>`<div class="gen-stage"><h4>${s.h}</h4><div class="purpose">目的：${s.p}</div><p>「${s.t}」</p></div>`).join('')}
+        <div class="fav-acts">
+          <button class="fcopy">📋 複製</button>
+          <button class="fspeak">🔊 朗讀</button>
+          <button class="fstop">⏹ 停止</button>
+          <button class="del">🗑 刪除</button>
+        </div>
+      </div>
+    </div>`).join('');
+  $$('.fav-card').forEach(card=>{
+    const id=+card.dataset.id;const f=favs.find(x=>x.id===id);
+    $('.fav-head',card).addEventListener('click',()=>card.classList.toggle('open'));
+    $('.fcopy',card).addEventListener('click',async()=>{const t=favPlain(f);try{await navigator.clipboard.writeText(t);}catch(e){const ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();}toast('已複製 📋');});
+    $('.fspeak',card).addEventListener('click',()=>{if(speakZh(favPlain(f)))toast('開始朗讀 🔊');});
+    $('.fstop',card).addEventListener('click',stopSpeak);
+    $('.del',card).addEventListener('click',()=>{if(confirm('刪除這則收藏？')){favs=favs.filter(x=>x.id!==id);saveFavs();renderFavs();toast('已刪除');}});
+  });
+}
+
+/* ====================== PWA ====================== */
+if('serviceWorker'in navigator){
+  window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+}
+let deferredPrompt=null;
+window.addEventListener('beforeinstallprompt',(e)=>{e.preventDefault();deferredPrompt=e;$('#installBar').classList.add('show');});
+$('#installYes').addEventListener('click',async()=>{$('#installBar').classList.remove('show');if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;}});
+$('#installNo').addEventListener('click',()=>$('#installBar').classList.remove('show'));
+
+/* ====================== INIT ====================== */
+renderDays();
+renderFavs();
+</script>
+</body>
+</html>
